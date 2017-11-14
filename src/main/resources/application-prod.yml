@@ -1,0 +1,9 @@
+logging:
+  level:
+    root: info
+    com.hirisun.springbootdemo: error
+server:
+  port: 80
+spring:
+  thymeleaf:
+    cache: false

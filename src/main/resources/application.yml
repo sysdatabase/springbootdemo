@@ -1,0 +1,13 @@
+server:
+  context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 800
+  session:
+    timeout: 6000
+spring:
+  devtools:
+    restart:
+      exclude: static/**
+  profiles:
+    active: dev
