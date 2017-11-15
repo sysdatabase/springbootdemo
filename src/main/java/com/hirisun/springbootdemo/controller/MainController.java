@@ -17,23 +17,23 @@ public class MainController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MainController.class);
 
-    @RequestMapping(value = {"/","/index"},method = RequestMethod.GET)
-    public String index(){
+    @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
+    public String index() {
         return "index";
     }
 
     @RequestMapping("/login")
-    public String login(){
+    public String login() {
         LOGGER.debug("This is Login Method!");
         return "login";
 
     }
 
-    @RequestMapping(value = "/logout",method = RequestMethod.GET)
-    public String logout(HttpServletRequest request, HttpServletResponse response){
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.debug("This is Logout Method!");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null){
+        if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         return "redirect:login";
