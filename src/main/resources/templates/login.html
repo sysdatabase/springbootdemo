@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta xmlns:th="http://www.thymeleaf.org" charset="UTF-8"/>
+    <title>Login Page</title>
+</head>
+<body>
+<form method="post">
+    <div th:if="${param.error}" th:text="${session.SPRING_SECURITY_LAST_EXCEPTION.message}"></div>
+    <table border="solid 1px">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        <tr style="text-align: center">
+            <td colspan="2">用户登录</td>
+        </tr>
+        <tr>
+            <td>用户名 :</td>
+            <td>
+                <input type="text" name="username"/>
+            </td>
+        </tr>
+        <tr>
+            <td>密  码 :</td>
+            <td><input type="password" name="password"/></td>
+        </tr>
+        <tr style="text-align: center">
+            <td colspan="2"><input type="submit" value="登录"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

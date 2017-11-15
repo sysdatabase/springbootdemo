@@ -9,10 +9,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MainController {
 
-    private Logger logger = LoggerFactory.getLogger(MainController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MainController.class);
 
     @RequestMapping(value = {"/","/index"},method = RequestMethod.GET)
     public String index(){
         return "index";
+    }
+
+    @RequestMapping("/login")
+    public String login(){
+        LOGGER.debug("This is Login Method!");
+        return "login";
+
     }
 }
