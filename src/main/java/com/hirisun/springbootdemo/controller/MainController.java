@@ -29,6 +29,12 @@ public class MainController {
 
     }
 
+    @RequestMapping("/admin")
+    public String admin(){
+        LOGGER.debug("This is Admin Method!");
+        return "admin";
+    }
+
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.debug("This is Logout Method!");

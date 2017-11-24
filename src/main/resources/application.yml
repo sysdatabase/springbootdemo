@@ -15,3 +15,11 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  mvc:
+    favicon:
+      enabled: false
+scheduleService:
+  getInfoOne:
+    fixedRateString: 600
+  getInfoTwo:
+    cron: 0/1 * * * * ?
