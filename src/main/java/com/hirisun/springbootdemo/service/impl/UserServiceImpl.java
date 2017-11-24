@@ -6,7 +6,8 @@ import com.hirisun.springbootdemo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
+
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -17,9 +18,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public User loadUserByUsername(String username) {
-        if (!StringUtils.isEmpty(username)) {
-            return userRepository.getByUsername(username);
-        }
-        return null;
+        String newUserName = Optional.ofNullable(username).orElse("");
+        return Optional.ofNullable(userRepository.getByUsername(newUserName)).orElse(null);
     }
 }
