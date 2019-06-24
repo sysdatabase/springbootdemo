@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Hello SpringBoot</h1>
-    <div sec:authorize="hasRole('ROLE_ADMIN')">
+    <div sec:authorize="hasRole('/admin')">
         <a th:href="@{/admin}">admin</a>
     </div>
     <hr/>

@@ -10,4 +10,17 @@ public interface UserService {
      * @return 用户信息
      */
     User loadUserByUsername(String username);
+
+    /**
+     * 根据ID获得用户信息
+     * @param id 用户Id
+     * @return
+     */
+    User getById(long id);
+
+    /**
+     * 根据Id删除用户信息
+     * @param id
+     */
+    void delById(long id);
 }

@@ -18,4 +18,9 @@ public class PermissionServiceImpl implements PermissionService {
     public List<Permission> getByUserId(long id) {
         return permissionRepository.getByUserId(id);
     }
+
+    @Override
+    public void deleteById(long id) {
+        permissionRepository.deleteById(id);
+    }
 }

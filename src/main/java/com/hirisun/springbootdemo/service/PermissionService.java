@@ -7,4 +7,6 @@ import java.util.List;
 public interface PermissionService {
 
     List<Permission> getByUserId(long id);
+
+    void deleteById(long id);
 }

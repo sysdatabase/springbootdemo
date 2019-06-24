@@ -21,4 +21,14 @@ public class UserServiceImpl implements UserService {
         String newUserName = Optional.ofNullable(username).orElse("");
         return Optional.ofNullable(userRepository.getByUsername(newUserName)).orElse(null);
     }
+
+    @Override
+    public User getById(long id) {
+        return userRepository.findOne(id);
+    }
+
+    @Override
+    public void delById(long id) {
+        userRepository.delete(id);
+    }
 }

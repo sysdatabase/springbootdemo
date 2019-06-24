@@ -6,5 +6,11 @@
 </head>
 <body>
     <h1>Admin Page</h1>
+    <a href="/users/1">获得ID为1的用户</a>
+    <hr/>
+    <form action="/users/1" method="post">
+        <input type="hidden" name="_method" value="delete"/>
+        <button type="submit" name="删除">删除</button>
+    </form>
 </body>
 </html>
