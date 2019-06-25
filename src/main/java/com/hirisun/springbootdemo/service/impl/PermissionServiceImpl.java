@@ -5,6 +5,7 @@ import com.hirisun.springbootdemo.dao.PermissionRepository;
 import com.hirisun.springbootdemo.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class PermissionServiceImpl implements PermissionService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void deleteById(long id) {
         permissionRepository.deleteById(id);
     }

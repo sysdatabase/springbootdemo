@@ -3,7 +3,6 @@ package com.hirisun.springbootdemo.controller;
 import com.hirisun.springbootdemo.service.PermissionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +20,6 @@ public class PermissionController {
     private PermissionService permissionService;
 
     @DeleteMapping("/permissions/{id}")
-    @Transactional
     public String delete(@PathVariable("id") Long id){
         permissionService.deleteById(id);
         return "success";

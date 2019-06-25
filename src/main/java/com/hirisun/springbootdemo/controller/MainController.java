@@ -6,8 +6,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,25 +16,25 @@ public class MainController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MainController.class);
 
-    @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/", "/index"})
     public String index() {
         return "index";
     }
 
-    @RequestMapping("/login")
+    @GetMapping("/login")
     public String login() {
         LOGGER.debug("This is Login Method!");
         return "login";
 
     }
 
-    @RequestMapping("/admin")
+    @GetMapping("/admin")
     public String admin(){
         LOGGER.debug("This is Admin Method!");
         return "admin";
     }
 
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    @GetMapping(value = "/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.debug("This is Logout Method!");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
