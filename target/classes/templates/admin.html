@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta xmlns:th="http://www.thymeleaf.org" charset="UTF-8"/>
+    <title>Admin Page</title>
+</head>
+<body>
+    <h1>Admin Page</h1>
+    <a href="/users/1">获得ID为1的用户</a>
+    <hr/>
+    <form action="/users/1" method="post">
+        <input type="hidden" name="_method" value="delete"/>
+        <button type="submit" name="删除">删除</button>
+    </form>
+    <hr/>
+    <form action="/roles/1", method="post">
+        <input type="hidden" name="_method" value="put"/>
+        <input name="roleName" value="管理员"/>
+        <input name="permissions" value="1"/>
+        <button type="submit">提交</button>
+    </form>
+</body>
+</html>

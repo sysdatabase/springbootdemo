@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "",
+      "type": "com.hirisun.springbootdemo.service.impl.ScheduleServiceImpl",
+      "sourceType": "com.hirisun.springbootdemo.service.impl.ScheduleServiceImpl"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
