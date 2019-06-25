@@ -17,8 +17,10 @@ public class Permission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @Column(name = "permissionName")
     private String permissionName;
+
     @JsonIgnore
     @ManyToMany(mappedBy ="permissions")
     private Set<Role> roles = new HashSet<Role>();
