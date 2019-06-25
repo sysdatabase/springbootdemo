@@ -1,0 +1,21 @@
+debug: true
+logging:
+  level:
+    root: info
+    com.hirisun.springbootdemo: debug
+server:
+  port: 8080
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    open-in-view: false
+flyway:
+  baseline-on-migrate: true

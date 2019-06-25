@@ -15,13 +15,11 @@ import java.util.Set;
 public class Permission {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "permissionName")
     private String permissionName;
     @JsonIgnore
-    @ManyToMany
-    @JoinTable(name = "t_permission_role",joinColumns = {@JoinColumn(name = "p_id")},
-            inverseJoinColumns = {@JoinColumn(name = "r_id")})
+    @ManyToMany(mappedBy ="permissions")
     private Set<Role> roles = new HashSet<Role>();
 }
